@@ -5,13 +5,15 @@ import React from "react";
 
 
 const PhotoCard = props =>{
-
+console.log(props);
     return (
         <div className = "photo_card">
-          <img className="image" src = {props.url} alt= "NASA pic of the day" /> 
-            <h2>Photo Title: {props.title} </h2>
+            <h2>Photo Decsription: </h2>
+            <p> {props.description} </p>
+          <img className="image" src = {props.image} alt= "NASA pic of the day" /> 
+            <h2>Title: {props.title} </h2>
     <h3>Photo Taken: {props.date}</h3>
-    <p>Photo Decsription: {props.explanation} </p>
+
     
     </div>
        
