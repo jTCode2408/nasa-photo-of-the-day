@@ -8,11 +8,19 @@ const PhotoCard = props =>{
 console.log(props);
     return (
         <div className = "photo_card">
-            <h2>Photo Decsription: </h2>
-            <p> {props.description} </p>
+<div className = "photo_title">
+            <h2>Today's Photo: </h2>
+            <h4> {props.title} </h4>
+            </div>
+            <div className = "decription">
+
           <img className="image" src = {props.image} alt= "NASA pic of the day" /> 
-            <h2>Title: {props.title} </h2>
-    <h3>Photo Taken: {props.date}</h3>
+          <h2>Photo Decsription: </h2>
+            <p> {props.description} </p>
+            </div>
+            <div className = "photo_date">
+    <h3>Date: {props.date}</h3>
+    </div>
 
     
     </div>
