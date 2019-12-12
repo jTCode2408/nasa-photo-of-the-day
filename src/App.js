@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import MainCard from "./components/MainCard";
+import { Badge } from "reactstrap";
 
 
 function App() {
@@ -8,9 +9,9 @@ function App() {
   
   return (
     <div className="App">
-      <h1>
+      <Badge color = "secondary">
        WELCOME TO NASA PHOTO OF THE DAY!
-      </h1>
+       </Badge>
       <MainCard />
     </div>
   );

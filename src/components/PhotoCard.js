@@ -19,7 +19,7 @@ console.log(props);
             <p> {props.description} </p>
             </div>
             <div className = "photo_date">
-    <h3>Date: {props.date}</h3>
+     <h3>Date: {props.date}</h3>
     </div>
 
     
