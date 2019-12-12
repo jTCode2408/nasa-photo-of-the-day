@@ -2,7 +2,8 @@
 //child of MainCard
 //export photo card to MainCard
 import React, { useState } from "react";
-import { Card, CardImg, CardText, CardBody, CardSubtitle, Col, Row, Toast, ToastHeader, Spinner, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardSubtitle, Col, Row, Toast, ToastHeader, Spinner, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Alert } from "reactstrap";
+
 
 
 const PhotoCard = props =>{
@@ -29,7 +30,10 @@ console.log(props);
               Photo Link!
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>{props.image}</DropdownItem>
+            
+                <DropdownItem>
+               {props.image}     
+                </DropdownItem>
                 </DropdownMenu>
 
           </ButtonDropdown>
@@ -38,11 +42,18 @@ console.log(props);
       
           <CardBody>
           <Row xs = "2">
-          <CardSubtitle> <Spinner color="primary" />  Photo Decsription: </CardSubtitle>
-            <CardText> {props.description} </CardText>
+          <CardSubtitle> <Spinner color="primary" /> 
+          <Alert color="success"> Photo Decsription: </Alert>
+          </CardSubtitle>
+
+            <Alert> {props.description}
+             </Alert>
+             
             </Row>
             <Row xs = "2">
-     <CardSubtitle><Spinner color="success" />  Date: {props.date} </CardSubtitle>
+     <CardSubtitle><Spinner color="success" /> 
+     <Alert color = "primary"> Date: {props.date}</Alert>
+      </CardSubtitle>
      </Row>
      </CardBody>
     </Card>
