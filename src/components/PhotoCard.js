@@ -2,29 +2,32 @@
 //child of MainCard
 //export photo card to MainCard
 import React from "react";
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Col, Row } from "reactstrap";
 
 
 const PhotoCard = props =>{
 console.log(props);
     return (
-        <div className = "photo_card">
-<div className = "photo_title">
-            <h2>Today's Photo: </h2>
-            <h4> {props.title} </h4>
-            </div>
-            <div className = "decription">
-
-          <img className="image" src = {props.image} alt= "NASA pic of the day" /> 
-          <h2>Photo Decsription: </h2>
-            <p> {props.description} </p>
-            </div>
-            <div className = "photo_date">
-     <h3>Date: {props.date}</h3>
-    </div>
-
+     
+      <Col>
+          <Card>
+            <CardTitle> Today's Photo:  {props.title}  </CardTitle>
+            <Col>
+          <CardImg src = {props.image} alt= "NASA pic of the day" /> 
+          </Col>
+          <CardBody>
+          <Row xs = "2">
+          <CardSubtitle>Photo Decsription: </CardSubtitle>
+            <CardText> {props.description} </CardText>
+            
+     <CardSubtitle>Date: </CardSubtitle>
+     <CardSubtitle>{props.date} </CardSubtitle>
+     </Row>
+     </CardBody>
+    </Card>
+    </Col>
     
-    </div>
-       
     );
 }
 

@@ -7,6 +7,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import PhotoCard from "./PhotoCard";
+import { Container, Row } from "reactstrap";
 
 export default function MainCard (){
 const [photos, setPhotos] = useState(Object);
@@ -27,7 +28,8 @@ useEffect (() =>{
 
 return (
 
-    <div className = "photo_container">
+    <Container>
+        <Row>
                 <PhotoCard
                 // key = {photos.key}
                 title = {photos.title}
@@ -37,8 +39,8 @@ return (
                 />
            
        
-        
-        </div>
+           </Row>
+        </Container>
 );
    
     }
