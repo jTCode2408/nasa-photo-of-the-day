@@ -1,28 +1,48 @@
 //will hold photo, title, date, explanation returned
 //child of MainCard
 //export photo card to MainCard
-import React from "react";
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Col, Row } from "reactstrap";
+import React, { useState } from "react";
+import { Card, CardImg, CardText, CardBody, CardSubtitle, Col, Row, Toast, ToastHeader, Spinner, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
 
 const PhotoCard = props =>{
+  const [dropdownOpen, setOpen] = useState(false);
+
+      const toggle = () => setOpen(!dropdownOpen);
 console.log(props);
     return (
-     
+      
       <Col>
           <Card>
-            <CardTitle> Today's Photo:  {props.title}  </CardTitle>
+            <div className = "p-3 bg-secondary my-2 rounded">
+            <Toast>
+              <ToastHeader> <h1>Today's Photo: </h1>
+              <h2>{props.title} </h2> </ToastHeader>
+              </Toast>
+              </div>
             <Col>
           <CardImg src = {props.image} alt= "NASA pic of the day" /> 
           </Col>
+
+          <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle caret color = "info">
+              Photo Link!
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>{props.image}</DropdownItem>
+                </DropdownMenu>
+
+          </ButtonDropdown>
+         
+          
+      
           <CardBody>
           <Row xs = "2">
-          <CardSubtitle>Photo Decsription: </CardSubtitle>
+          <CardSubtitle> <Spinner color="primary" />  Photo Decsription: </CardSubtitle>
             <CardText> {props.description} </CardText>
-            
-     <CardSubtitle>Date: </CardSubtitle>
-     <CardSubtitle>{props.date} </CardSubtitle>
+            </Row>
+            <Row xs = "2">
+     <CardSubtitle><Spinner color="success" />  Date: {props.date} </CardSubtitle>
      </Row>
      </CardBody>
     </Card>
