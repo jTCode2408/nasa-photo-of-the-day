@@ -1,13 +1,18 @@
 import React from "react";
 import "./App.css";
+import MainCard from "./components/MainCard";
+import { Jumbotron } from "reactstrap";
+
 
 function App() {
+
+  
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <Jumbotron>
+       <h1 className = "display-3">WELCOME TO NASA PHOTO OF THE DAY!</h1>
+       </Jumbotron>
+      <MainCard />
     </div>
   );
 }
